@@ -1,0 +1,6 @@
+{
+  "eslint.packageManager": "npm",
+  "eslint.workingDirectories": [
+    { "directory": "./packages/components" },
+  ]
+}

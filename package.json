@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "npm ci && npm run bootstrap-lerna",
+    "bootstrap-lerna": "lerna bootstrap --ci",
+    "clean-packages": "lerna run clean",
+    "clean-lerna": "lerna clean --yes",
+    "clean": "npm run clean-packages && npm run clean-lerna",
+    "build": "lerna run build",
+    "snapshot": "lerna version prerelease --git-remote martellotech --force-publish && lerna publish from-git --dist-tag snapshot --git-remote martellotech --force-publish",
+    "major": "lerna version major --git-remote martellotech --force-publish && lerna publish from-git --git-remote martellotech --force-publish",
+    "minor": "lerna version minor --git-remote martellotech --force-publish && lerna publish from-git --git-remote martellotech --force-publish",
+    "patch": "lerna version patch --git-remote martellotech --force-publish && lerna publish from-git --git-remote martellotech --force-publish",
+    "serve": "npm run build && lerna run watch --parallel"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "dependencies": {}
+}
